@@ -3,26 +3,26 @@ module.exports = app => {
 
     var router = require('express').Router();
 
-    //create a new tutorial
-    router.post("/https://tutorialsbackend.onrender.com/", tutorials.create);
+ //create a new tutorial
+router.post("/", tutorials.create);
 
-    //retrieve all tutorials
-    router.get("/https://tutorialsbackend.onrender.com/", tutorials.findAll);
+//retrieve all tutorials
+router.get("/", tutorials.findAll);
 
-    //retrieve all published tutorials
-    router.get("/https://tutorialsbackend.onrender.com/published", tutorials.findAllPublished);
+//retrieve all published tutorials
+router.get("/published", tutorials.findAllPublished);
 
-    //retrieve a single tutorials with id
-    router.get("/https://tutorialsbackend.onrender.com/:id", tutorials.findOne);
+//retrieve a single tutorials with id
+router.get("/:id", tutorials.findOne);
 
-    //update a tutorial with id
-    router.put("/https://tutorialsbackend.onrender.com/:id", tutorials.update);
+//update a tutorial with id
+router.put("/:id", tutorials.update);
 
-    //delete a tutorial with an id
-    router.delete("/https://tutorialsbackend.onrender.com/:id", tutorials.delete)
+//delete a tutorial with an id
+router.delete("/:id", tutorials.delete)
 
-    //delete all tutorials 
-    router.delete("/https://tutorialsbackend.onrender.com/", tutorials.deleteAll);
+//delete all tutorials 
+router.delete("/", tutorials.deleteAll);
 
-    app.use("/https://tutorialsbackend.onrender.com/", router);
+app.use("/api/tutorials", router);
 }
