@@ -7,11 +7,11 @@ const cors = require("cors");
 
 const app = express()
 
-var corsOptions = {
-    origin: "https://tutorialsapp-frontend.netlify.app/" //will need to be changed for netlify deploy
-};
-
-app.use(cors(corsOptions));
+// var corsOptions = {
+//     origin: "https://tutorialsapp-frontend.netlify.app/" //will need to be changed for netlify deploy
+// };
+app.use(cors());
+// app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
