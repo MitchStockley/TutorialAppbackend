@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "https://dorettetutorial.netlify.app"
+  origin: "https://darling-lollipop-9c513c.netlify.app"
 };
 
 app.use(cors(corsOptions));
@@ -15,7 +15,7 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-const db = require("./app/models");
+const db = require("../app/models");
 db.mongoose
   .connect(db.url, {
     useNewUrlParser: true,
@@ -36,8 +36,8 @@ app.get("/", (req, res) => {
 
 //require("./app/routes/tutorial.routes")(app);
 // Import the routes for tutorials
-const Tutorial = require("./app/models/tutorial.model.js");
-const tutorialRoutes = require("./app/routes/tutorial.routes");
+const Tutorial = require("../app/models/tutorial.model.js");
+const tutorialRoutes = require("../app/routes/tutorial.routes.js");
 tutorialRoutes(app);
 
 // set port, listen for requests
